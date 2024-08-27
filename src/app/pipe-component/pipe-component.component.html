@@ -1,0 +1,81 @@
+<h3>{{title}}</h3>
+
+
+<!--Time Formate-->
+<h4>UnFormate Date</h4>
+<p>{{newDate}}</p>
+
+<h4>Formate Date</h4>
+<p>{{newDate | date}}</p>
+
+<h4>medium Date</h4>
+<p>{{newDate | date :'medium'}}</p>
+
+
+<h4>short Date</h4>
+<p>{{newDate | date :'short'}}</p>
+
+
+<h4>full Date</h4>
+<p>{{newDate | date:'fullDate'}}</p>
+
+
+<h4>long Date</h4>
+<p>{{newDate | date :'longDate'}}</p>
+
+
+<!--  UpperCase and Lower Case-->
+
+<p>In LowerCase:</p>
+<pre> {{title|lowercase}}</pre>
+
+<p>IN UpparCase:</p>
+<pre>{{title|uppercase}}</pre>
+
+<!-- slice pipe -->
+
+<!--string values-->
+ <p>the title is : {{title}}</p>
+ <pre>getting only hello:{{title|slice:0:4}}</pre>
+
+
+ <!--Array values-->
+
+<h3>Name</h3>
+<ul>
+<li *ngFor="let data of datas|slice:0:4">{{data}}</li>
+</ul>
+
+
+<p *ngFor="let currency of currencies">
+  amount is: {{ amount | currency:currency }}<br><br>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

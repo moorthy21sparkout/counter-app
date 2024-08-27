@@ -1,1 +1,24 @@
-<app-counter></app-counter>
+<!-- <app-counter></app-counter>  -->
+<!-- <app-pipe-component></app-pipe-component> -->
+<div>
+<app-form (carAdded)="onCarAdded($event)"></app-form>
+<app-list [carNames]="carNames"></app-list>
+
+
+<app-bikeform></app-bikeform>
+<app-bikelist></app-bikelist>
+
+
+<h1>Life Cycle Hooks</h1>
+
+<h2>ngOnChange</h2>
+<input type="text" name="titleFirst" [(ngModel)]="titleFirst">
+<app-child [items]="itemList" [titleFirst]="titleFirst"></app-child>
+</div>
+
+<h2>ngOnInit</h2>
+
+<p>message:{{message}}</p>
+
+<h2>ngHookcheck</h2>
+<input type="text" [(ngModel)]="titleSec" name="titleSec">
