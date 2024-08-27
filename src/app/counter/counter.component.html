@@ -1,0 +1,25 @@
+<h1>Count:{{count}}</h1>
+<button (click)="increament()" [ngStyle]="{'color':'green'}">Click me! +</button>&nbsp;
+<button (click)="decreament()" [ngStyle]="{'color':'red'}">Click me! -</button>
+
+
+<h1>ngFor Eample</h1>
+<h1>Movie List</h1>
+
+<div>
+  <input [(ngModel)]="newMovie.title" placeholder="Title" /><br><br>
+  <input [(ngModel)]="newMovie.cretificate" placeholder="cretificate" /><br><br>
+  <input [(ngModel)]="newMovie.year" type="number" placeholder="Year" /><br><br>
+  <button (click)="addMovie()">Add Movie</button>
+</div>
+
+<ul>
+  <li *ngFor="let movie of movies; let i = index">
+    <strong [ngStyle]="{'color':'red'}">{{ movie.title }}</strong> - {{ movie.cretificate }} ({{ movie.year }})
+    <button (click)="removeMovie(i)">Remove</button>
+  </li>
+</ul>
+click<input type="checkbox" [(ngModel)]="show"><br>
+<p *ngIf="show"> Loading....</p><br>
+change the color <input type="checkbox" [(ngModel)]="change">
+<p [ngClass]="{'color':change}">the simple text</p>
