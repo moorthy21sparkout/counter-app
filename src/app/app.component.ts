@@ -8,11 +8,12 @@ import { BikelistComponent } from './bikelist/bikelist.component';
 import { BikeformComponent } from './bikeform/bikeform.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
+import { TemplatedrivenComponent } from './templatedriven/templatedriven.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CounterComponent, PipeComponentComponent, FormComponent, ListComponent, BikelistComponent, BikeformComponent, ChildComponent, FormsModule],
+  imports: [RouterOutlet, CounterComponent, PipeComponentComponent, FormComponent, ListComponent, BikelistComponent, BikeformComponent, ChildComponent, FormsModule,TemplatedrivenComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

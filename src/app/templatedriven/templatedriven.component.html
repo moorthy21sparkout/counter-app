@@ -1,0 +1,39 @@
+<div class="form-container">
+  <h2>User Details Form</h2>
+  <h4 [ngStyle]="{'color':'gray'}">date: {{date|date:'medium'}}</h4>
+  <form #detaliesForm="ngForm" (submit)="OnSubmit(detaliesForm)">
+    <div class="form-group"  >
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="contact.name"/>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="contact.email"/>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" [(ngModel)]="contact.dob"/>
+    </div>
+    <div class="form-group" >
+      <label for="gender" >Gender:</label>
+      <input type="radio" name="genter" value="male" [(ngModel)]="contact.genter"/>Male
+      <input type="radio" name="genter" value="female" [(ngModel)]="contact.genter"/>Female
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select name="country"  [(ngModel)]="contact.country">
+        <option value="">select</option>
+        <option [ngValue]="country.id" *ngFor="let country of countryList">
+          {{ country.name }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group" ngModelGroup="Address">
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4"  [(ngModel)]="contact.address"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
