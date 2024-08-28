@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgControl, NgForm, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-templatedriven',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,ReactiveFormsModule],
   templateUrl: './templatedriven.component.html',
   styleUrl: './templatedriven.component.css'
 })
@@ -22,12 +22,12 @@ export class TemplatedrivenComponent implements OnInit {
   contact: Contact;
   ngOnInit(): void {
     this.contact = {
-      name: 'Moorthy',
-      email: 'email@yopmail.com',
-      dob: '24-02-2002',
-      genter: 'male',
-      country: '5',
-      address: 'covai'
+      name: '',
+      email: '',
+      dob: '',
+      genter: '',
+      country: '',
+      address: ''
     }
   }
 OnSubmit(form: NgForm) {

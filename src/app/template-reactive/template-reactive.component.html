@@ -1,0 +1,60 @@
+<div class="form-container">
+  <h2>Company Details Form</h2>
+  <h4 [ngStyle]="{'color':'gray'}">date: {{date|date:'medium'}}</h4>
+  <form [formGroup]="companyContact" (submit)="OnSubmit()">
+    <div class="form-group"  >
+      <label for="componyname">Company Name:</label>
+      <input type="text" id="componyname" name="componyName" formControlName="componyName"/>
+      <span [ngStyle]="{'color':'red'}"  *ngIf="!componyname.valid && (componyname?.touched ||componyname?.dirty )">
+       <span [ngStyle]="{'color':'red'}"  *ngIf="companyContact.controls.componyName.errors?.['required']">
+        this field is required
+      </span>
+        <span [ngStyle]="{'color':'red'}"  *ngIf="componyname.errors?.['minlength']">
+          Minumun length is atleast 15 charactor
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="componyemail"> Compony Email:</label>
+      <input type="email" id="componyemail" name="componyEmail" formControlName="componyEmail"/>
+    </div>
+    <div class="form-group"  >
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" formControlName="name"/>
+    </div>
+    <div class="form-group">
+      <label for="email"> Email:</label>
+      <input type="email" id="email" name="email" formControlName="email"/>
+    </div>
+    <div class="form-group">
+      <label for="dob"> Your Date of Birth:</label>
+      <input type="date" id="dob" name="dob" formControlName="dob"/>
+    </div>
+    <div class="form-group" >
+      <label for="gender" >Gender:</label>
+      <input type="radio" name="genter" value="male" formControlName="genter"/>Male
+      <input type="radio" name="genter" value="female"  formControlName="genter"/>Female
+    </div>
+    <div class="form-group" >
+      <label for="country">Country</label>
+      <select name="country"  formControlName="country" >
+        <option value=""disabled selected>select the country</option>
+        <option [ngValue]="country.id" *ngFor="let country of countryList">
+          {{ country.name }}
+        </option>
+      </select>
+
+    </div>
+    <div class="form-group" formGroupName="address">
+      <label for="city">City:</label>
+      <input id="city" name="city" formControlName="city" />
+      <label for="street">street:</label>
+      <input id="street" name="street" formControlName="street" >
+      <label for="zipcode">zip Code:</label>
+      <input id="zipcode" name="zipcode"formControlName="zipcode" />
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!companyContact.valid">Submit</button>
+    </div>
+  </form>
+</div>
